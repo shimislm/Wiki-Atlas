@@ -1,7 +1,7 @@
-import { createCommonCountries } from "./countriesManager";
+import { createCommonCountries , createSingleCountry,displayBorderName } from "./countriesManager";
 
 export default class Country{
-    constructor(_parent , _item, displayBorderName , createSingleCountry){
+    constructor(_parent , _item){
         this.parent = _parent;
         this.name = _item.name.common;
         let borders = Object.values(_item.borders)
@@ -73,15 +73,13 @@ export default class Country{
         const borderArr =[];
         if(borderArr){
             this.borders.forEach(async item =>{
-                countryName =await this.displayBorderName(item)
+                countryName =await displayBorderName(item)
                 borderLink.innerHTML +=  `<span class="li"> ${countryName} |</span>`
                 borderArr.push(countryName);
             })
         }
-
-        
         borderArr.forEach(item =>{
-            borderLink.querySelector(".li").addEventListener("click", this.createSingleCountry(item))
+            borderLink.querySelector(".li").addEventListener("click", createSingleCountry(item))
             console.log(borderArr)
         })
         
