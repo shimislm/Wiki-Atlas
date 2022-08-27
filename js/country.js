@@ -1,11 +1,11 @@
-import { createCommonCountries , createSingleCountry,displayBorderName } from "./countriesManager";
+import { createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager";
 
-export default class Country{
-    constructor(_parent , _item){
+export default class Country {
+    constructor(_parent, _item) {
         this.parent = _parent;
         this.name = _item.name.common;
         let borders = Object.values(_item.borders)
-        this.borders = borders ? borders : "No Borders" ;
+        this.borders = borders ? borders : "No Borders";
         let corrency = Object.values(_item.currencies)
         this.currency = `${corrency[0].name} ${corrency[0].symbol}`;
         this.flag = _item.flags.svg;
@@ -14,11 +14,10 @@ export default class Country{
         let languages = Object.values(_item.languages)
         this.languages = languages;
         this.region = _item.region;
-        this.displayBorderName = displayBorderName;
-        this.createSingleCountry = createSingleCountry
+        this.lat = _item.lating;
 
     }
-    renderCommon(){
+    renderCommon() {
         let parent = document.querySelector(this.parent)
         let myDiv = document.createElement("div");
         myDiv.className = "country justify-content-between h-100";
@@ -33,13 +32,13 @@ export default class Country{
         </div>
 
     </div>`
-    let box = myDiv.querySelector(".country-box")
-        box.addEventListener("click", ()=>{
-            parent.innerHTML="";
+        let box = myDiv.querySelector(".country-box")
+        box.addEventListener("click", () => {
+            parent.innerHTML = "";
             this.render();
         })
     }
-    render(){
+    render() {
         document.querySelector(this.parent).classList.remove("row-cols-md-3")
         let countryName = [this.name];
         let myDiv = document.createElement("div");
@@ -59,30 +58,39 @@ export default class Country{
         </div>
         <div class="map border col-md-6 rounded-4 p-0">
         </div>
-        
+
         `
-        let map =myDiv.querySelector(".map")
-        map.innerHTML =`
-        <iframe class="rounded-4 border border-dark" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3487012.6004784335!2d35.081815549999995!3d31.406252499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1siw!2sil!4v1661624962274!5m2!1siw!2sil" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        let map = myDiv.querySelector(".map")
+        map.innerHTML = `
+        <iframe 
+            width="300" 
+            height="170" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            src="https://maps.google.com/maps?q=${this.lat[0]},${this.lon[1]}&hl=es&z=14&amp;output=embed"
+            >
+        </iframe>
         `
         let btn = myDiv.querySelector(".btn")
-        btn.addEventListener("click",()=>{
+        btn.addEventListener("click", () => {
             createCommonCountries();
         })
         let borderLink = myDiv.querySelector(".full_border");
-        const borderArr =[];
-        if(borderArr){
-            this.borders.forEach(async item =>{
-                countryName =await displayBorderName(item)
-                borderLink.innerHTML +=  `<span class="li"> ${countryName} |</span>`
+        const borderArr = [];
+        if (borderArr) {
+            this.borders.forEach(async item => {
+                countryName = await displayBorderName(item)
+                borderLink.innerHTML += `<span class="li"> ${countryName} |</span>`
                 borderArr.push(countryName);
             })
         }
-        borderArr.forEach(item =>{
+        borderArr.forEach(item => {
             borderLink.querySelector(".li").addEventListener("click", createSingleCountry(item))
             console.log(borderArr)
         })
-        
-        
+
+
     }
 }
