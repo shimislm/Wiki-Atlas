@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/headerFooter.css">
+    <script src="js/app.js" defer type="module"></script>
+    <title>Country Search</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="container-fluid p-0 m-0">
+        <div class="container">
+            <nav class="row justify-content-md-between mx-2">
+                <div class="cuntries-links col-md-8">
+                    <ul class="align-items-center list-group list-group-horizontal">
+                        <div class="logo d-md-block d-none">
+                            <img src="https://freesvg.org/img/03bef2.png" alt="Earth Logo">
+                        </div>
+                        <li id="israel_link"><a href="#">Israel <img src="images/israel.png" alt="Israel-flag"></a></li>
+                        <li id="usa_link"><a href="#">USA <img src="images/USA.png" alt="USA-flag"></a></li>
+                        <li id="france_link"><a href="#">FRANCE <img src="images/FRANCE.png" alt="FRANCE-flag"></a></li>
+                        <li id="thailand_link"><a href="#">thailand <img src="images/thailand.png"
+                                    alt="THAILAND-flag"></a></li>
+                        <li id="uk_link"><a href="#">UK <img src="images/UK.png" alt="UK-flag"></a></li>
+                    </ul>
+                </div>
+
+                <div class="d-flex col-md-4 col-10">
+                    <input id="search-input" type="search" class="form-control me-1" placeholder="Search Country..." />
+                    <select id="id_select" class="rounded-2 me-1 w-50">
+                        <option value="">Choose country</option>
+                    </select>
+                    <button id="search-button" type="button" class="btn btn-primary">
+                        <span class="fa fa-search"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- Header ends -->
+    <main class="container-fluid">
+        <div class="container">
+            <div id="id_load" class="loading text-center mt-2">
+                <img src="images/Loadingsome.gif" alt="load" width="200px">
+                <section id="id-weather" class="weather-section">
+
+                </section>
+            </div>
+            <div id="id_country" class="country row row-cols-md-3 mt-4 g-3">
+                <!-- <div class="map border rounded-4">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=Israel&t=&z=7&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://www.whatismyip-address.com"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 500px;
+                                    width: 600px;
+                                }
+                            </style><a href="https://www.embedgooglemap.net"></a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 500px;
+                                    width: 600px;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-box border text-bg-warning rounded-4 opacity-75 text-dark">
+                    <img src="https://flagcdn.com/il.svg" alt="" width="300">
+                    <h2>Name: Israel</h2>
+                    <h2>Capital: Jerusalem</h2>
+                    <h4>Borders: Lebanon , Sirya , Egypt , Jorden</h4>
+                    <h6>Population: 9.4M</h6>
+                    <h6>Languages: 9.4M</h6>
+                    <h6>Currency: NIS </h6>
+                    <h6>Population: 9.4M</h6>
+                </div> -->
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer id="contact" class="container-fluid mt-5 d-flex justify-content-center align-items-center">
+        <div class="center justify-content-around container text-center d-flex">
+            <div class="profile row center d-flex align-items-center justify-content-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="index.html">
+                        <img class="profileimg" src="https://i.ibb.co/7Jcrb5N/profile-Pic.jpg" alt="Profile">
+                    </a>
+                    <div class="headline">
+                        <h4>Shimon Salem</h4>
+                        <h6>Full Stack Devoloper © 2022</h6>
+                    </div>
+                </div>
+            </div>
+            <a href="mailto:shimislm5@gmail.com" target="_blank">
+                <img src="https://i.ibb.co/3yhRmhv/3d-logo-Gmail-png.png" alt="Gmail">
+            </a>
+            <a href="https://github.com/shimislm" target="_blank">
+                <img src="https://i.ibb.co/bHPwLy1/Github-icon-logo-on-transparent-PNG.png" alt="Github">
+            </a>
+            <a href="https://chat.whatsapp.com/EGbT9cp5tSsCFzx1DBMwFD" target="_blank">
+                <img src="https://i.ibb.co/y62GhRp/3-D-Whats-App-logo-transparent-PNG.png" alt="Whatsapp">
+            </a>
+            <a href="https://www.linkedin.com/in/shimon-salem/" target="_blank">
+                <img src="https://i.ibb.co/LQmgdmq/Linkedin-logo-3d-button-social-media-png.png" alt="Linkedin">
+            </a>
+            <a href="https://twitter.com/SalemShimon" target="_blank">
+                <img src="https://i.ibb.co/MD2Gcbz/3-D-Twitter-logo-PNG.png" alt="Twitter">
+            </a>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+</body>
+
+</html>

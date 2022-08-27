@@ -1,0 +1,266 @@
+:root {
+    --black: #333;
+    --white: #fff;
+    --red: #CD5C5C;
+    --primary-50: #e0fcff;
+    --primary-100: #bef8fd;
+    --primary-200: #87eaf2;
+    --primary-300: #54d1db;
+    --primary-400: #38bec9;
+    --primary-500: #2cb1bc;
+    --primary-600: #14919b;
+    --primary-700: #0e7c86;
+    --primary-800: #0a6c74;
+    --primary-900: #044e54;
+    --primary-1000: #023a3f;
+    /* grey */
+    --grey-50: #f0f4f8;
+    --grey-100: #d9e2ec;
+    --grey-200: #bcccdc;
+    --grey-300: #9fb3c8;
+    --grey-400: #829ab1;
+    --grey-500: #627d98;
+    --grey-600: #486581;
+    --grey-700: #334e68;
+    --grey-800: #243b53;
+    --grey-900: #102a43;
+    /* rest of the colors */
+    --black: #333;
+    --white: #fff;
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
+}
+
+body {
+    // background-color: var(--white);
+    background-image: url(/images/Doha-city-skyline-design-on-transparent-background-PNG.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    // width: 100%;
+    background: rgba(0, 0, 0, 0.503);
+    font-size: 0.8em;
+    background-image: url(/images/city_skyline.svg); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+    // justify-content: center;
+    // align-items: center;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .form-control:focus {
+            border-color: #189AB4;
+            box-shadow: inset 0 1px 1px #d4f1f4b2, 0 0 8px #189ab4b3;
+        }
+        .logo {
+            img {
+                padding: 0;
+                border-radius: 50%;
+                max-width: 50px;
+                height: 100%;
+            }
+        }
+        .cuntries-links{
+            ul {
+                margin: 0;
+                padding: 0;
+                li {
+                    margin: 4px 24px;
+                    padding: 4px;
+                    transition: 0.2s;
+    
+                    a {
+                        font-weight: bolder;
+                        display: block;
+                        position: relative;
+                        text-decoration: none;
+                        padding: 5px;
+                        font-size: 15px;
+                        font-family: sans-serif;
+                        color: var(--white);
+                        text-transform: uppercase;
+                        transition: 0.2s;
+                        img{
+                            margin: 4px;
+                            width: 20px;
+                        }
+                    }
+    
+                    a:hover {
+                        transform: scale(1.4);
+                        opacity: 1;
+                        filter: blur(0);
+                        text-decoration: none;
+                        color: var(--primary-1000);
+                        box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+                    }
+    
+                    a:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--green-light);
+                        transition: 0.8s;
+                        transform-origin: right;
+                        transform: scaleX(0);
+                        z-index: -1;
+                    }
+                    a:hover:before {
+                        transition: transform 0.8s;
+                        transform-origin: left;
+                        transform: scaleX(1);
+                    }
+                }
+                ul:hover {
+                    transform: scale(1.5);
+                    opacity: 0.2;
+                    filter: blur(5px);
+                }
+            }
+        }
+
+    }
+
+}
+main{
+    margin-bottom: 100px;
+    min-height: 500px;
+    .container{
+        min-height: inherit;
+        .country{
+            min-height: 250px;
+            .country-box{
+                min-height: inherit;
+                cursor: pointer;
+                .flag{
+                    min-height: 250px;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+}
+footer {
+    background: rgba(0, 0, 0, 0.503);
+    bottom: 0;
+    left: 0;
+    background-image: url(/images/city_skyline.svg); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+    transition: 1000ms;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 80%;
+            width: 50px;
+            border-right: rgba(163, 163, 163, 0.196) 0.5px solid;
+            border-bottom-right-radius: 80px;
+            transition: 1000ms;
+        }
+
+        img:hover {
+            border-bottom-right-radius: 10px;
+            border-right: none;
+            transform: translateX(-8px);
+        }
+    }
+
+
+
+    .profile {
+        color: var(--white);
+        a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .profileimg {
+            float: left;
+            width: 60px;
+            border-radius: 50%;
+            border-right: rgb(0, 0, 0) 5px solid;
+        }
+
+        .headline {
+            padding: 8px;
+
+            h4,
+            h6 {
+                font-size: 1.2em;
+                font-weight:bolder ;
+            }
+        }
+    }
+}
+@media(max-width:768px){
+    header{
+        nav{
+            justify-content: center;
+            .cuntries-links{
+                ul{
+                    justify-content: center;
+                    li{
+                        margin:0;
+                        a{
+                            text-align: center;
+                            font-size: 0.8em;
+                            padding: 4px;
+                        }
+                    }
+                }
+            }
+
+        }
+        }
+
+    footer{
+        a{
+            img{
+                height: 50%;
+                width: 30px;
+            }
+        }
+        .profile{
+            .profileimg{
+                width: 50px;
+            }
+            
+            .headline{
+                font-size: 0.8em;
+            }
+            
+        }
+    }
+}
