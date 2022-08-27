@@ -84,12 +84,13 @@ export default class Country {
                 countryName = await displayBorderName(item)
                 borderLink.innerHTML += `<span class="li"> ${countryName} |</span>`
                 borderArr.push(countryName);
+                item.addEventListener("click", createSingleCountry(item))
             })
         }
-        borderArr.forEach(item => {
-            borderLink.querySelector(".li").addEventListener("click", createSingleCountry(item))
-            console.log(borderArr)
-        })
+        // borderArr.forEach(item => {
+        //     borderLink.querySelector(".li").addEventListener("click", createSingleCountry(item))
+        //     console.log(borderArr)
+        // })
 
 
     }
