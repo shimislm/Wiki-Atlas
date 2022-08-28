@@ -27,9 +27,9 @@ export const createAllSelects=()=>{
 export const createSingleCountry = input => {
   input = input.toLowerCase();
   document.querySelector("#id_country").innerHTML=""
-  let ar = allCountries_ar.filter(item => item.name.official.toLowerCase().includes(input) || item.name.common.toLowerCase().includes(input))
+  let ar = allCountries_ar.filter(item => item.name.official.toLowerCase().includes(input) || item.name.common.toLowerCase().startsWith(input) || item.name.common.toLowerCase().includes(input))
   document.querySelector("#id_load").classList.add("d-none");
-  // console.log(ar)
+  console.log(ar)
   if(ar[0]!= "null"){
     ar.forEach(item => {
       let country = new Country("#id_country",item);

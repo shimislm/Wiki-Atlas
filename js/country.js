@@ -79,7 +79,7 @@ export default class Country {
         // console.log(borders)
         const borderArr = [];
         if (this.borders != "No Borders") {
-            borders.innerHTML ="";
+            borders.innerHTML =" ";
             this.borders.forEach(async item => {
                 countryName = await displayBorderName(item)
                 const neib = document.createElement("a")
