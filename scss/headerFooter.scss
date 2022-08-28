@@ -35,7 +35,7 @@
 
 body {
     background-color: var(--white);
-    background-image: url(/images/Doha-city-skyline-design-on-transparent-background-PNG.png );
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/ns22061-image-kwvy8tpl.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=76f9d7b81a5494eb787f6ac847a05836");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@ h6 {
 header{
     background: rgba(0, 0, 0, 0.503);
     font-size: 0.8em;
-    background-image: url(/images/city_skyline.svg); 
+    background-image: url("/images/city_skyline.svg"); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
 
     nav {
@@ -170,7 +170,7 @@ footer {
     background: rgba(0, 0, 0, 0.503);
     bottom: 0;
     left: 0;
-    background-image: url(/images/city_skyline.svg); 
+    background-image: url("/images/city_skyline.svg"); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
     transition: 1000ms;
     position: fixed;
