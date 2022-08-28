@@ -1,11 +1,10 @@
-import { createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager";
+import { createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager.js";
 
 export default class Country {
     constructor(_parent, _item) {
         this.parent = _parent;
         this.name = _item.name.common;
-        let borders = Object.values(_item.borders)
-        this.borders = borders ? borders : "No Borders";
+        this.borders = _item.borders ? _item.borders : "No Borders";
         let corrency = Object.values(_item.currencies)
         this.currency = `${corrency[0].name} ${corrency[0].symbol}`;
         this.flag = _item.flags.svg;
@@ -14,8 +13,8 @@ export default class Country {
         let languages = Object.values(_item.languages)
         this.languages = languages;
         this.region = _item.region;
-        this.lat = _item.lating;
-
+        this.latlng = _item.latlng;
+        // console.log(this.latlng)
     }
     renderCommon() {
         let parent = document.querySelector(this.parent)
@@ -23,12 +22,12 @@ export default class Country {
         myDiv.className = "country justify-content-between h-100";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box text-bg-warning rounded-4 opacity-100 text-dark h-100 p-2">
+        <div class="country-box border border-2 text-bg-warning rounded-4 opacity-100 text-dark h-100 p-2">
         <div class="h-75 flag rounded-4" style="background-image:url(${this.flag}) ;">
         </div>
         <div class="h-50">
         <h2>Name: ${this.name}</h2>
-        <h2>Capital: ${this.capital}</h2>
+        <h4>Capital: ${this.capital}</h4>
         </div>
 
     </div>`
@@ -45,31 +44,30 @@ export default class Country {
         myDiv.className = "country row my-2 justify-content-between";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box border text-bg-warning rounded-4 opacity-100 text-dark col-md-5 py-2">
-        <img src="${this.flag}" alt="${this.name}" width="100%">
+        <div class="country-box border border-2 text-bg-warning rounded-4 opacity-100 text-dark col-md-5 py-2">
+        <img class="rounded-4" src="${this.flag}" alt="${this.name}" width="100%">
         <h2>Name: ${this.name}</h2>
-        <h2>Capital: ${this.capital}</h2>
-        <h4 class="full_border">Borders:</h4>
+        <h4>Capital: ${this.capital}</h4>
+        <h6>Borders:<span class="borderLink"> No borders</span></h6>
         <h6>Population: ${this.pop}</h6>
         <h6>Languages: ${this.languages}</h6>
         <h6>Currency: ${this.currency} </h6>
         <h6>Region: ${this.region} </h6>
         <button class="btn btn-primary mt-2 text-end">Back</button>
         </div>
-        <div class="map border col-md-6 rounded-4 p-0">
+        <div class="map border border-white border-2 col-md-6 rounded-4 p-0 overflow-hidden">
         </div>
-
         `
         let map = myDiv.querySelector(".map")
         map.innerHTML = `
         <iframe 
-            width="300" 
-            height="170" 
+            width="100%" 
+            height="100%" 
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
             marginwidth="0" 
-            src="https://maps.google.com/maps?q=${this.lat[0]},${this.lon[1]}&hl=es&z=14&amp;output=embed"
+            src="https://maps.google.com/maps?q=${this.latlng[0]},${this.latlng[1]}&hl=en&z=5&amp;output=embed"
             >
         </iframe>
         `
@@ -77,21 +75,22 @@ export default class Country {
         btn.addEventListener("click", () => {
             createCommonCountries();
         })
-        let borderLink = myDiv.querySelector(".full_border");
+        const borders = myDiv.querySelector(".borderLink");
+        // console.log(borders)
         const borderArr = [];
-        if (borderArr) {
+        if (this.borders != "No Borders") {
+            borders.innerHTML ="";
             this.borders.forEach(async item => {
                 countryName = await displayBorderName(item)
-                borderLink.innerHTML += `<span class="li"> ${countryName} |</span>`
-                borderArr.push(countryName);
-                item.addEventListener("click", createSingleCountry(item))
+                const neib = document.createElement("a")
+                borders.append(neib)
+                neib.innerHTML += `${countryName} `
+                borders.innerHTML+= neib
             })
+
         }
-        // borderArr.forEach(item => {
-        //     borderLink.querySelector(".li").addEventListener("click", createSingleCountry(item))
-        //     console.log(borderArr)
-        // })
-
-
+        borderArr.forEach(item =>{
+            
+        })
     }
 }

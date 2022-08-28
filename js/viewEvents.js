@@ -23,7 +23,7 @@ export const declareEvents = () => {
         createSingleCountry(search.value);
     })
     usa_li.addEventListener("click",()=>{
-        createSingleCountry("united states");
+        createSingleCountry("United States of America");
     })
     israel_li.addEventListener("click",()=>{
         createSingleCountry("israel");

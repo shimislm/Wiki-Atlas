@@ -154,13 +154,17 @@ main{
         .country{
             min-height: 250px;
             .country-box{
+                box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
                 min-height: inherit;
-                cursor: pointer;
+                // cursor: pointer;
                 .flag{
                     min-height: 250px;
                     background-position: center;
                     background-size: cover;
                 }
+            }
+            .map{
+                box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
             }
         }
     }
