@@ -22,11 +22,11 @@ export default class Country {
         myDiv.className = "country justify-content-between h-100 p-0";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box border border-2 mx-md-2 text-bg-warning rounded-4 opacity-100 text-dark h-100 p-2">
-        <div class="h-75 flag rounded-4" style="background-image:url(${this.flag}) ;">
+        <div class="country-box bg-light border border-2 mx-md-2  rounded-4 opacity-100 text-dark h-100 p-2">
+        <h2 class=" text-center mb-1 rounded-4" >Name: ${this.name}</h2>
+        <div class="h-75 flag rounded-4 m-2 shadow" style="background-image:url(${this.flag}) ;">
         </div>
         <div class="h-50">
-        <h2>Name: ${this.name}</h2>
         <h4>Capital: ${this.capital}</h4>
         </div>
 
@@ -38,15 +38,15 @@ export default class Country {
         })
     }
     render() {
-        document.querySelector(this.parent).classList.remove("row-cols-md-3")
+        document.querySelector(this.parent).classList.remove("row-cols-lg-3")
         let countryName = [this.name];
         let myDiv = document.createElement("div");
-        myDiv.className = "country row my-2 justify-content-between p-0";
+        myDiv.className = "country w-100 row my-2 justify-content-between p-0";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box text-bg-warning mx-md-0 text-dark col-md-5 py-2">
-        <img class="rounded-4" src="${this.flag}" alt="${this.name}" width="100%">
-        <h2>Name: ${this.name}</h2>
+        <div class="country-box bg-light mx-md-0 text-dark col-md-5 py-2 d-flex flex-column align-items-start">
+        <h2 class=" text-center mb-1 rounded-4" >Name: ${this.name}</h2>
+        <img class="rounded-4 align-self-center shadow m-2" src="${this.flag}" alt="${this.name}" width="100%">
         <h4>Capital: ${this.capital}</h4>
         <h6>Borders:<span class="borderLink"> No borders</span></h6>
         <h6>Population: ${this.pop}</h6>
@@ -84,10 +84,13 @@ export default class Country {
             this.borders.forEach(async item => {
                 countryName = await displayBorderName(item)
                 const neib = document.createElement("a")
-                neib.innerHTML += `<a href="#"}>${countryName}</a> `
+                neib.innerHTML += `<span}>${countryName}</span> `
                 borders.append(neib)
                 borders.innerHTML+= neib
+                
             })
+            const link = myDiv.querySelector(".span")
+            link.querySelector("span").addEventListener("click", createSingleCountry(countryName))
         }
     }
 }

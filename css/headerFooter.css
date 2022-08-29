@@ -149,11 +149,12 @@ main .container {
 }
 main .container .country {
   min-height: 250px;
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 0;
   overflow: hidden;
 }
 main .container .country .country-box {
+  align-items: center;
   cursor: pointer;
   min-height: inherit;
 }
@@ -242,9 +243,9 @@ footer .profile .headline h6 {
     min-height: inherit;
   }
   main .container .country {
-    padding: 0;
     overflow: hidden;
     min-height: 300px;
+    padding: 8px;
   }
   main .container .country .country-box {
     min-height: inherit;
@@ -255,7 +256,7 @@ footer .profile .headline h6 {
     background-size: cover;
   }
   main .container .country .map {
-    min-height: inherit;
+    height: 500px;
   }
   footer {
     margin-top: 60px;

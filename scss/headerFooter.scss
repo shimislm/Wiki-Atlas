@@ -153,13 +153,13 @@ main{
     .container{
         min-height: inherit;
         padding: 0;
-        
         .country{
             min-height: 250px;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 0;
             overflow: hidden;
             .country-box{
+                align-items: center;
                 cursor: pointer;
                 min-height: inherit;
                 .flag{
@@ -258,9 +258,9 @@ footer {
             .container{
                 min-height: inherit;
                 .country{
-                    padding: 0;
                     overflow: hidden;
                     min-height: 300px;
+                    padding: 8px;
                     .country-box{
                         min-height: inherit;
                         .flag{
@@ -270,7 +270,7 @@ footer {
                         }
                     }
                     .map{
-                        min-height:inherit;
+                        height: 500px;;
                     }
                 }
             }

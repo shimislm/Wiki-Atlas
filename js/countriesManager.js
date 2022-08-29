@@ -29,15 +29,17 @@ export const createSingleCountry = input => {
   document.querySelector("#id_country").innerHTML=""
   let ar = allCountries_ar.filter(item => item.name.official.toLowerCase().includes(input) || item.name.common.toLowerCase().includes(input))
   document.querySelector("#id_load").classList.add("d-none");
-  console.log(ar)
-  if(ar[0]!= "null"){
+  // console.log(ar)
+  // Check if country exists acording to input
+  if(ar.length > 0 ){
     ar.forEach(item => {
       let country = new Country("#id_country",item);
       country.render();
     })
   }
+  // returns "COuntry didnt found massage"
   else{
-    document.querySelector("#id_country").innerHTML="<h2>Country didn't found</h2>"
+    document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
   }
 } 
 /**Get country code and return full cuntry name */
