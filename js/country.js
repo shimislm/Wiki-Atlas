@@ -87,8 +87,7 @@ export default class Country {
                 borders.append(neib)
             })   
         }
-        
-        let link = await borders.querySelector(".linkBorder")
+        let link = borders.querySelector(".linkBorder")
         link.addEventListener("click", createSingleCountry(countryName))
     }
 }

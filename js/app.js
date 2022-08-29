@@ -9,7 +9,8 @@ const doApi = async() =>{
     let url = "https://restcountries.com/v3.1/all";
     let resp = await fetch(url);
     let data = await resp.json();
-    console.log(data);
+    // console.log(data);
+    data = data.filter(item => item.name.common != "Palestine")
     createCommonCountries(data);
     createAllSelects()
 }
