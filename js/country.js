@@ -7,7 +7,7 @@ export default class Country {
         this.borders = _item.borders ? _item.borders : "No Borders";
         let corrency = Object.values(_item.currencies)
         this.currency = `${corrency[0].name} ${corrency[0].symbol}`;
-        this.flag = _item.flags.svg;
+        this.flag = _item.flags.png;
         this.pop = `${(Math.floor((_item.population / 1000000) * 100) / 100).toLocaleString()}M`;
         this.capital = _item.capital
         let languages = Object.values(_item.languages)

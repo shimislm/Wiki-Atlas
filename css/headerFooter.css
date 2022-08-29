@@ -63,8 +63,6 @@ header {
   font-size: 0.8em;
   background-image: url("/images/city_skyline.svg");
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
-  background-position: bottom;
-  background-size: cover;
 }
 header nav {
   display: flex;
@@ -173,8 +171,6 @@ footer {
   left: 0;
   background-image: url("/images/city_skyline.svg");
   box-shadow: 0px 10px 13px -7px #000000, 0px -5px 19px -2px rgb(0, 0, 0);
-  background-position: bottom;
-  background-size: cover;
   transition: 1000ms;
   position: fixed;
   bottom: 0;
@@ -186,8 +182,8 @@ footer a {
   align-items: center;
 }
 footer a img {
-  height: 80%;
-  width: 50px;
+  height: 70%;
+  width: 40px;
   border-right: rgba(163, 163, 163, 0.196) 0.5px solid;
   border-bottom-right-radius: 80px;
   transition: 1000ms;
@@ -206,7 +202,7 @@ footer .profile a {
 }
 footer .profile .profileimg {
   float: left;
-  width: 60px;
+  width: 50px;
   border-radius: 50%;
   border-right: rgb(0, 0, 0) 5px solid;
 }
@@ -215,7 +211,7 @@ footer .profile .headline {
 }
 footer .profile .headline h4,
 footer .profile .headline h6 {
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-weight: bolder;
 }
 
