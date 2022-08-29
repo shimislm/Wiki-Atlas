@@ -16,6 +16,7 @@ export default class Country {
         this.latlng = _item.latlng;
         // console.log(this.latlng)
     }
+    /**create first common cuntries*/
     renderCommon() {
         let parent = document.querySelector(this.parent)
         let myDiv = document.createElement("div");
@@ -37,6 +38,7 @@ export default class Country {
             this.render();
         })
     }
+    /**create single or result of searched countries */
     render() {
         document.querySelector(this.parent).classList.remove("row-cols-lg-3")
         let countryName = [this.name];

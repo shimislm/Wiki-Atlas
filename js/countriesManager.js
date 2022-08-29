@@ -50,7 +50,7 @@ export const createSingleCountry = input => {
     document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
   }
 } 
-/**Get country code and return full cuntry name */
+/**Get country code and return full country name */
 export const displayBorderName = async (code) =>{
   let url = `https://restcountries.com/v3.1/alpha/${code.toLowerCase()}`;
   let resp = await fetch(url);
