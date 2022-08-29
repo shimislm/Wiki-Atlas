@@ -77,20 +77,18 @@ export default class Country {
             createCommonCountries();
         })
         const borders = myDiv.querySelector(".borderLink");
-        // console.log(borders)
-        const borderArr = [];
+        console.log(borders)
+        let neib = document.createElement("a")
         if (this.borders != "No Borders") {
-            borders.innerHTML =" ";
+            borders.innerHTML = " ";
             this.borders.forEach(async item => {
                 countryName = await displayBorderName(item)
-                const neib = document.createElement("a")
-                neib.innerHTML += `<span}>${countryName}</span> `
+                neib.innerHTML += `<a class="linkBorder">${countryName}</a> `
                 borders.append(neib)
-                borders.innerHTML+= neib
-                
-            })
-            // const link = myDiv.querySelector(".span")
-            // link.querySelector("span").addEventListener("click", createSingleCountry(countryName))
+            })   
         }
+        
+        let link = await borders.querySelector(".linkBorder")
+        link.addEventListener("click", createSingleCountry(countryName))
     }
 }
