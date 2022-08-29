@@ -63,6 +63,8 @@ header {
   font-size: 0.8em;
   background-image: url("/images/city_skyline.svg");
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+  background-position: bottom;
+  background-size: cover;
 }
 header nav {
   display: flex;
@@ -139,24 +141,29 @@ header nav .cuntries-links ul ul:hover {
 
 main {
   margin-bottom: 100px;
-  min-height: 500px;
+  min-height: 70vh;
 }
 main .container {
   min-height: inherit;
+  padding: 0;
 }
 main .container .country {
   min-height: 250px;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
 }
 main .container .country .country-box {
-  box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
   min-height: inherit;
 }
 main .container .country .country-box .flag {
-  min-height: 250px;
+  min-height: 200px;
   background-position: center;
   background-size: cover;
 }
 main .container .country .map {
+  min-height: 100%;
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
 }
 
@@ -166,6 +173,8 @@ footer {
   left: 0;
   background-image: url("/images/city_skyline.svg");
   box-shadow: 0px 10px 13px -7px #000000, 0px -5px 19px -2px rgb(0, 0, 0);
+  background-position: bottom;
+  background-size: cover;
   transition: 1000ms;
   position: fixed;
   bottom: 0;
@@ -224,6 +233,32 @@ footer .profile .headline h6 {
     text-align: center;
     font-size: 0.8em;
     padding: 4px;
+  }
+  main {
+    margin-bottom: 100px;
+    min-height: 250px;
+  }
+  main .container {
+    min-height: inherit;
+  }
+  main .container .country {
+    padding: 0;
+    overflow: hidden;
+    min-height: 300px;
+  }
+  main .container .country .country-box {
+    min-height: inherit;
+  }
+  main .container .country .country-box .flag {
+    min-height: 250px;
+    background-position: center;
+    background-size: cover;
+  }
+  main .container .country .map {
+    min-height: inherit;
+  }
+  footer {
+    margin-top: 60px;
   }
   footer a img {
     height: 40%;

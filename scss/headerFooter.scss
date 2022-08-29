@@ -63,7 +63,8 @@ header{
     font-size: 0.8em;
     background-image: url("/images/city_skyline.svg"); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
-
+    background-position: bottom;
+    background-size: cover;
     nav {
         display: flex;
         align-items: center;
@@ -148,22 +149,27 @@ header{
 }
 main{
     margin-bottom: 100px;
-    min-height: 500px;
+    min-height: 70vh;
     .container{
         min-height: inherit;
+        padding: 0;
+        
         .country{
             min-height: 250px;
+            border-radius: 16px;
+            padding: 0;
+            overflow: hidden;
             .country-box{
-                box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
+                cursor: pointer;
                 min-height: inherit;
-                // cursor: pointer;
                 .flag{
-                    min-height: 250px;
+                    min-height: 200px;
                     background-position: center;
                     background-size: cover;
                 }
             }
             .map{
+                min-height: 100%;
                 box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
             }
         }
@@ -176,6 +182,8 @@ footer {
     left: 0;
     background-image: url("/images/city_skyline.svg"); 
     box-shadow: 0px 10px 13px -7px #000000,0px -5px 19px -2px rgb(0, 0, 0);
+    background-position: bottom;
+    background-size: cover;
     transition: 1000ms;
     position: fixed;
     bottom: 0;
@@ -244,8 +252,32 @@ footer {
 
         }
         }
-
+        main{
+            margin-bottom: 100px;
+            min-height: 250px;
+            .container{
+                min-height: inherit;
+                .country{
+                    padding: 0;
+                    overflow: hidden;
+                    min-height: 300px;
+                    .country-box{
+                        min-height: inherit;
+                        .flag{
+                            min-height: 250px;
+                            background-position: center;
+                            background-size: cover;
+                        }
+                    }
+                    .map{
+                        min-height:inherit;
+                    }
+                }
+            }
+        
+        }
     footer{
+        margin-top: 60px;
         a{
             img{
                 height: 40%;

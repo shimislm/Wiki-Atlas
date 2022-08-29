@@ -19,10 +19,10 @@ export default class Country {
     renderCommon() {
         let parent = document.querySelector(this.parent)
         let myDiv = document.createElement("div");
-        myDiv.className = "country justify-content-between h-100";
+        myDiv.className = "country justify-content-between h-100 p-0";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box border border-2 text-bg-warning rounded-4 opacity-100 text-dark h-100 p-2">
+        <div class="country-box border border-2 mx-md-2 text-bg-warning rounded-4 opacity-100 text-dark h-100 p-2">
         <div class="h-75 flag rounded-4" style="background-image:url(${this.flag}) ;">
         </div>
         <div class="h-50">
@@ -41,10 +41,10 @@ export default class Country {
         document.querySelector(this.parent).classList.remove("row-cols-md-3")
         let countryName = [this.name];
         let myDiv = document.createElement("div");
-        myDiv.className = "country row my-2 justify-content-between";
+        myDiv.className = "country row my-2 justify-content-between p-0";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
-        <div class="country-box border border-2 text-bg-warning rounded-4 opacity-100 text-dark col-md-5 py-2">
+        <div class="country-box text-bg-warning mx-md-0 text-dark col-md-5 py-2">
         <img class="rounded-4" src="${this.flag}" alt="${this.name}" width="100%">
         <h2>Name: ${this.name}</h2>
         <h4>Capital: ${this.capital}</h4>
@@ -55,14 +55,15 @@ export default class Country {
         <h6>Region: ${this.region} </h6>
         <button class="btn btn-primary mt-2 text-end">Back</button>
         </div>
-        <div class="map border border-white border-2 col-md-6 rounded-4 p-0 overflow-hidden">
+        <div class="map border border-white border-2 col-md-6 my-md-2 my-3 rounded-4 p-0 overflow-hidden">
         </div>
         `
         let map = myDiv.querySelector(".map")
+        map.className = "country-box p-0 rounded-end-4 text-dark col-md-7 p-0"
         map.innerHTML = `
         <iframe 
             width="100%" 
-            height="100%" 
+            height="100%
             frameborder="0" 
             scrolling="no" 
             marginheight="0" 
