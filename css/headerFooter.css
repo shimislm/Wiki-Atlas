@@ -144,7 +144,6 @@ main {
   min-height: 70vh;
 }
 main .container {
-  min-height: inherit;
   padding: 0;
 }
 main .container .country {
