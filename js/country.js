@@ -89,8 +89,8 @@ export default class Country {
                 borders.innerHTML+= neib
                 
             })
-            const link = myDiv.querySelector(".span")
-            link.querySelector("span").addEventListener("click", createSingleCountry(countryName))
+            // const link = myDiv.querySelector(".span")
+            // link.querySelector("span").addEventListener("click", createSingleCountry(countryName))
         }
     }
 }

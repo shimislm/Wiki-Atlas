@@ -27,9 +27,17 @@ export const createAllSelects=()=>{
 export const createSingleCountry = input => {
   input = input.toLowerCase();
   document.querySelector("#id_country").innerHTML=""
-  let ar = allCountries_ar.filter(item => item.name.official.toLowerCase().includes(input) || item.name.common.toLowerCase().includes(input))
+  let ar = allCountries_ar.filter(item =>
+    // serch by country official name 
+  item.name.official.toLowerCase().includes(input) 
+  // serch by country code with 2 letters 
+  ||item.cca2.toLowerCase().includes(input)
+  // serch by country code with 3 letters
+  ||item.cca3.toLowerCase().includes(input)
+  // serch by country full name that includes input
+  ||item.name.common.toLowerCase().includes(input))
   document.querySelector("#id_load").classList.add("d-none");
-  // console.log(ar)
+  console.log(ar)
   // Check if country exists acording to input
   if(ar.length > 0 ){
     ar.forEach(item => {
@@ -37,7 +45,7 @@ export const createSingleCountry = input => {
       country.render();
     })
   }
-  // returns "COuntry didnt found massage"
+  // returns "Country didnt found massage"
   else{
     document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
   }
