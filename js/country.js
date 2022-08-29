@@ -84,14 +84,10 @@ export default class Country {
             this.borders.forEach(async item => {
                 countryName = await displayBorderName(item)
                 const neib = document.createElement("a")
+                neib.innerHTML += `<a href="#"}>${countryName}</a> `
                 borders.append(neib)
-                neib.innerHTML += `${countryName} `
                 borders.innerHTML+= neib
             })
-
         }
-        borderArr.forEach(item =>{
-            
-        })
     }
 }
