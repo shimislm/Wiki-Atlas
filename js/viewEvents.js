@@ -10,16 +10,17 @@ export const declareEvents = () => {
     let uk_li =document.querySelector("#uk_link")
     let thailand_li =document.querySelector("#thailand_link")
     select.addEventListener("change", ()=>{
-        console.log(select.value)
+        search.value="";
         createSingleCountry(select.value)
     })
     search.addEventListener("keypress",(e)=>{
-        console.log(e.key)
         if(e.key === "Enter"){
                 createSingleCountry(search.value)
         }
+        select.value="";
     })
     search_btn.addEventListener("click",()=>{
+        select.value="";
         createSingleCountry(search.value);
     })
     usa_li.addEventListener("click",()=>{

@@ -46,8 +46,11 @@ export const createSingleCountry = input => {
       country.render();
     })
   }
+  
   // returns "Country didnt found massage"
   else{
+    document.querySelector("#id_select").value = "";
+    document.querySelector("#search-input").value = "";
     document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
     setTimeout(function () {
       document.querySelector("#id_country").innerHTML="";
