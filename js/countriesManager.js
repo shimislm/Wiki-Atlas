@@ -19,6 +19,7 @@ export const createCommonCountries = (_ar = allCountries_ar) => {
 export const createAllSelects=()=>{
   let select = document.querySelector("#id_select")
   let sorted_arr = _.sortBy(allCountries_ar,"name.common")
+  document.querySelector("#id_load").classList.add("d-none");
   sorted_arr.forEach(item =>{
     select.innerHTML +=`
     <option value="${item.name.common}">${item.name.common}</option>`;
@@ -39,9 +40,8 @@ export const createSingleCountry = input => {
   // search by country full name that includes input
   ||item.name.common.toLowerCase().includes(input)
   // search by country full name that includes input without spaces
-  || item.name.common.toLowerCase().replace(" ","").includes(input) )
+  || item.name.common.replace(" ","").toLowerCase().includes(input) )
   document.querySelector("#id_load").classList.add("d-none");
-  console.log(ar)
   // Check if country exists acording to input
   if(ar.length > 0 ){
     ar.forEach(item => {
@@ -56,6 +56,7 @@ export const createSingleCountry = input => {
     document.querySelector("#search-input").value = "";
     document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
     setTimeout(function () {
+      document.querySelector("#id_load").classList.add("d-none");
       document.querySelector("#id_country").innerHTML="";
       createCommonCountries();
   }, 2000);

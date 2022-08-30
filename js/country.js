@@ -1,4 +1,4 @@
-import { createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager.js";
+import {createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager.js";
 
 export default class Country {
     constructor(_parent, _item) {
