@@ -165,6 +165,12 @@ main{
                     background-position: center;
                     background-size: cover;
                 }
+                .borderLink{
+                    span:hover{
+                        color:red;
+                    }
+                }
+
             }
             .map{
                 min-height: 100%;

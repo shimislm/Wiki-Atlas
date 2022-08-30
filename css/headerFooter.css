@@ -160,6 +160,9 @@ main .container .country .country-box .flag {
   background-position: center;
   background-size: cover;
 }
+main .container .country .country-box .borderLink span:hover {
+  color: red;
+}
 main .container .country .map {
   min-height: 100%;
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);

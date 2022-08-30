@@ -41,9 +41,9 @@ export default class Country {
     /**create single or result of searched countries */
     render() {
         document.querySelector(this.parent).classList.remove("row-cols-lg-3")
-        let countryName = [this.name];
         let myDiv = document.createElement("div");
         myDiv.className = "country w-100 row my-2 justify-content-between p-0";
+        // myDiv.style = "cursor: none;"
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `
         <div class="country-box bg-light mx-md-0 text-dark col-md-5 py-2 d-flex flex-column align-items-start">
@@ -78,18 +78,27 @@ export default class Country {
         btn.addEventListener("click", () => {
             createCommonCountries();
         })
-        const borders = myDiv.querySelector(".borderLink");
-        console.log(borders)
-        let neib = document.createElement("a")
-        if (this.borders != "No Borders") {
-            borders.innerHTML = " ";
-            this.borders.forEach(async item => {
-                countryName = await displayBorderName(item)
-                neib.innerHTML += `<a class="linkBorder">${countryName}</a> `
-                borders.append(neib)
-            })   
-        }
-        let link = borders.querySelector(".linkBorder")
-        link.addEventListener("click", createSingleCountry(countryName))
+        let borders = myDiv.querySelector(".borderLink");
+        let borders_ar = this.borders;
+        // Create all borders one by one
+        if (borders_ar) {
+            borders_ar.forEach(async (item, i) => {
+                // Check wither arr is empty
+              if(i >= 0){
+                borders.innerHTML = " "
+              }
+              // Wait for for all border to be loaded
+              const CountryName = await displayBorderName(item)
+              let border = document.createElement("a");
+              border.className = "singleBorder p-1"
+              border.style = "cursor: pointer; color:blue";
+              border.innerHTML = `${CountryName}`;
+              borders.append(border);
+              border.addEventListener("click", () => {
+                createSingleCountry(CountryName)
+              })
+            })
+          }
     }
+
 }
