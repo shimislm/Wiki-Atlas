@@ -74,6 +74,7 @@ export default class Country {
             >
         </iframe>
         `
+        // create back button
         let btn = myDiv.querySelector(".btn")
         btn.addEventListener("click", () => {
             createCommonCountries();
