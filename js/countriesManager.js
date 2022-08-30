@@ -27,16 +27,19 @@ export const createAllSelects=()=>{
 /** create single country UI */
 export const createSingleCountry = input => {
   input = input.toLowerCase();
+  input.replace(" ", "")
   document.querySelector("#id_country").innerHTML=""
   let ar = allCountries_ar.filter(item =>
-    // serch by country official name 
+    // search by country official name 
   item.name.official.toLowerCase().includes(input) 
-  // serch by country code with 2 letters 
+  // search by country code with 2 letters 
   ||item.cca2.toLowerCase().includes(input)
-  // serch by country code with 3 letters
+  // search by country code with 3 letters
   ||item.cca3.toLowerCase().includes(input)
-  // serch by country full name that includes input
-  ||item.name.common.toLowerCase().includes(input))
+  // search by country full name that includes input
+  ||item.name.common.toLowerCase().includes(input)
+  // search by country full name that includes input without spaces
+  || item.name.common.toLowerCase().replace(" ","").includes(input) )
   document.querySelector("#id_load").classList.add("d-none");
   console.log(ar)
   // Check if country exists acording to input
