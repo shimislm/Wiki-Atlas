@@ -24,18 +24,28 @@ export const declareEvents = () => {
         createSingleCountry(search.value);
     })
     usa_li.addEventListener("click",()=>{
+        search.value="";
+        select.value="";
         createSingleCountry("United States of America");
     })
     israel_li.addEventListener("click",()=>{
+        search.value="";
+        select.value="";
         createSingleCountry("israel");
     })
     thailand_li.addEventListener("click",()=>{
+        search.value="";
+        select.value="";
         createSingleCountry("thailand");
     })
     uk_li.addEventListener("click",()=>{
+        search.value="";
+        select.value="";
         createSingleCountry("united kingdom");
     })
     france_li.addEventListener("click",()=>{
+        search.value="";
+        select.value="";
         createSingleCountry("france");
     })
 }
