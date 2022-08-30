@@ -1,10 +1,10 @@
 import Country from "./country.js";
-let allCountries_ar = []
+const allCountries_ar = []
 //**Create all common cuntries on first load */
 export const createCommonCountries = (_ar = allCountries_ar) => { 
   document.querySelector("#id_country").innerHTML=""
   document.querySelector("#id_country").classList.add("row-cols-md-3")
-  allCountries_ar = _ar;
+  allCountries_ar.push(..._ar);
   let startPage_ar = ["israel","united states","france","united kingdom","thailand"];
   startPage_ar = _ar.filter(item => startPage_ar.includes(item.name.common.toLowerCase()))
   // console.log(startPage_ar)
@@ -17,8 +17,8 @@ export const createCommonCountries = (_ar = allCountries_ar) => {
 /**Create all countries to select input */
 export const createAllSelects=()=>{
   let select = document.querySelector("#id_select")
-  allCountries_ar = _.sortBy(allCountries_ar,"name.common")
-  allCountries_ar.forEach(item =>{
+  let sorted_arr = _.sortBy(allCountries_ar,"name.common")
+  sorted_arr.forEach(item =>{
     select.innerHTML +=`
     <option value="${item.name.common}">${item.name.common}</option>`;
   })
@@ -48,6 +48,7 @@ export const createSingleCountry = input => {
   // returns "Country didnt found massage"
   else{
     document.querySelector("#id_country").innerHTML=`<h2 class="display-1 bg-light rounded-4 p-3 w-100 text-center" >Country didn't found</h2>`
+    setTimeout(createCommonCountries, 2000)
   }
 } 
 /**Get country code and return full country name */

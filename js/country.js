@@ -50,7 +50,7 @@ export default class Country {
         <h2 class=" text-center mb-1 rounded-4" >Name: ${this.name}</h2>
         <img class="rounded-4 align-self-center shadow m-2" src="${this.flag}" alt="${this.name}" width="100%">
         <h4>Capital: ${this.capital}</h4>
-        <h6>Borders:<span class="borderLink"> No borders</span></h6>
+        <h6 class="ps-3 row borderLink align-items-center"">Borders: No borders</h6>
         <h6>Population: ${this.pop}</h6>
         <h6>Languages: ${this.languages}</h6>
         <h6>Currency: ${this.currency} </h6>
@@ -79,18 +79,18 @@ export default class Country {
             createCommonCountries();
         })
         let borders = myDiv.querySelector(".borderLink");
-        let borders_ar = this.borders;
+        let borders_ar =  this.borders;
         // Create all borders one by one
-        if (borders_ar) {
+        if (borders_ar!= "No Borders") {
             borders_ar.forEach(async (item, i) => {
                 // Check wither arr is empty
               if(i >= 0){
-                borders.innerHTML = " "
+                borders.innerHTML = "Borders:"
               }
               // Wait for for all border to be loaded
               const CountryName = await displayBorderName(item)
               let border = document.createElement("a");
-              border.className = "singleBorder p-1"
+              border.className = "singleBorder col-auto p-1"
               border.style = "cursor: pointer; color:blue";
               border.innerHTML = `${CountryName}`;
               borders.append(border);

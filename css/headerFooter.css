@@ -106,7 +106,7 @@ header nav .cuntries-links ul li a img {
   width: 20px;
 }
 header nav .cuntries-links ul li a:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   opacity: 1;
   filter: blur(0);
   text-decoration: none;
@@ -185,7 +185,7 @@ footer a {
   align-items: center;
 }
 footer a img {
-  height: 70%;
+  height: 75%;
   width: 40px;
   border-right: rgba(163, 163, 163, 0.196) 0.5px solid;
   border-bottom-right-radius: 80px;
@@ -232,6 +232,11 @@ footer .profile .headline h6 {
     text-align: center;
     font-size: 0.8em;
     padding: 4px;
+  }
+  header nav .cuntries-links ul li a:hover:before {
+    transition: transform 0.8s;
+    transform-origin: left;
+    transform: scaleX(0.8);
   }
   main {
     margin-bottom: 100px;
