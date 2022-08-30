@@ -144,6 +144,14 @@ main {
 main .container {
   padding: 0;
 }
+main .container .loading {
+  width: 300px;
+  margin: 0 auto;
+}
+main .container .loading h2 {
+  text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+  color: azure;
+}
 main .container .country {
   min-height: 250px;
   border-radius: 12px;
@@ -274,4 +282,4 @@ footer .profile .headline h6 {
   footer .profile .headline {
     font-size: 0.6em;
   }
-}/*# sourceMappingURL=headerFooter.css.map */
+}/*# sourceMappingURL=headerFooterMain.css.map */
