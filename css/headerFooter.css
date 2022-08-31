@@ -187,7 +187,7 @@ footer .profile .headline h6 {
   font-weight: bolder;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   header nav {
     justify-content: center;
   }
@@ -220,4 +220,4 @@ footer .profile .headline h6 {
   footer .profile .headline {
     font-size: 0.6em;
   }
-}/*# sourceMappingURL=headerFooterMain.css.map */
+}/*# sourceMappingURL=headerFooter.css.map */
