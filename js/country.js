@@ -71,7 +71,7 @@ export default class Country {
               }
               // Wait for for all border to be loaded
               const CountryName = await displayBorderName(item)
-              let border = document.createElement("a");
+              let border = document.createElement("span");
               border.className = "singleBorder col-auto p-1"
               border.style = "cursor: pointer;";
               border.innerHTML = `${CountryName}`;

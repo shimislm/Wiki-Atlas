@@ -1,4 +1,4 @@
-import { createSingleCountry } from "./countriesManager.js";
+import { createCommonCountries, createSingleCountry } from "./countriesManager.js";
 
 export const declareEvents = () => { 
     let select = document.querySelector("#id_select")
@@ -13,6 +13,9 @@ export const declareEvents = () => {
         search.value="";
         createSingleCountry(select.value)
     })
+    window.onhashchange = function() {
+        createCommonCountries()
+       }
     search.addEventListener("keypress",(e)=>{
         if(e.key === "Enter"){
                 createSingleCountry(search.value)

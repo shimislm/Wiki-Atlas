@@ -31,30 +31,24 @@ main .country .country-box .flag {
   background-position: center;
   background-size: cover;
 }
-main .country .country-box .borderLink {
-  padding-left: 12px;
-}
-main .country .country-box .borderLink a:hover {
-  color: aqua;
-}
-main .country .country-box:hover {
+main .country-box:hover {
   box-shadow: -13px 13px 13px -13px #000000, 25px 25px 25px 25px rgba(0, 0, 0, 0.302);
   transform: scale(1.05);
 }
-main .country .no-hover {
+main .no-hover {
   align-items: center;
   min-height: inherit;
   transition: 1000ms;
   box-shadow: none;
   transform: scale(1);
 }
-main .country .no-hover .borderLink {
+main .no-hover .borderLink {
   padding-left: 12px;
 }
-main .country .no-hover .borderLink a:hover {
-  color: aqua;
+main .no-hover .borderLink span:hover {
+  color: blue;
 }
-main .country .map {
+main .map {
   min-height: 100%;
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
 }
@@ -79,12 +73,6 @@ main .country .map {
     min-height: 250px;
     background-position: center;
     background-size: cover;
-  }
-  main .container .country .country-box .borderLink {
-    padding-left: 12px;
-  }
-  main .container .country .country-box .borderLink a:hover {
-    color: aqua;
   }
   main .container .country .map {
     height: 500px;

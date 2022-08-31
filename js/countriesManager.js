@@ -20,6 +20,7 @@ export const createAllSelects=()=>{
   let select = document.querySelector("#id_select")
   let sorted_arr = _.sortBy(allCountries_ar,"name.common")
   document.querySelector("#id_load").classList.add("d-none");
+  console.log(sorted_arr)
   sorted_arr.forEach(item =>{
     select.innerHTML +=`
     <option value="${item.name.common}">${item.name.common}</option>`;
