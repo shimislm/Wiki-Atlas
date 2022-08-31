@@ -28,8 +28,10 @@ main{
                 }
                 .borderLink{
                     padding-left: 12px;
+                    a:hover{
+                        color: aqua;
+                    }
                 }
-
             }
             .map{
                 min-height: 100%;

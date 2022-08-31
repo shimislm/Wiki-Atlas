@@ -32,6 +32,9 @@ main .container .country .country-box .flag {
 main .container .country .country-box .borderLink {
   padding-left: 12px;
 }
+main .container .country .country-box .borderLink a:hover {
+  color: aqua;
+}
 main .container .country .map {
   min-height: 100%;
   box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
