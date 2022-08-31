@@ -10,6 +10,7 @@ const doApi = async() =>{
     let resp = await fetch(url);
     let data = await resp.json();
     data = data.filter(item => item.name.common != "Palestine")
+    console.log(data)
     createCommonCountries(data);
     createAllSelects()
 }

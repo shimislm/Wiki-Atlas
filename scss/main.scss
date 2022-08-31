@@ -23,6 +23,7 @@ main{
                 align-items: center;
                 cursor: pointer;
                 min-height: inherit;
+                transition: 1000ms;
                 .flag{
                     min-height: 200px;
                     background-position: center;
@@ -36,8 +37,23 @@ main{
                 }
             }
             .country-box:hover{
-                background: #00000078;
+                box-shadow: -13px 13px 13px -13px #000000, 25px 25px 25px 25px rgba(0, 0, 0, 0.302);
+                transform: scale(1.05);
             }
+            .no-hover{
+                align-items: center;
+                min-height: inherit;
+                transition: 1000ms;
+                box-shadow:none;
+                transform: scale(1);
+                .borderLink{
+                    padding-left: 12px;
+                    a:hover{
+                        color: aqua;
+                    }
+                }
+            }
+
             .map{
                 min-height: 100%;
                 box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
@@ -62,6 +78,12 @@ main{
                         min-height: 250px;
                         background-position: center;
                         background-size: cover;
+                    }
+                    .borderLink{
+                        padding-left: 12px;
+                        a:hover{
+                            color: aqua;
+                        }
                     }
                 }
                 .map{
