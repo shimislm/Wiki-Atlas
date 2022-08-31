@@ -29,8 +29,8 @@ main .container .country .country-box .flag {
   background-position: center;
   background-size: cover;
 }
-main .container .country .country-box .borderLink span:hover {
-  color: red;
+main .container .country .country-box .borderLink {
+  padding-left: 12px;
 }
 main .container .country .map {
   min-height: 100%;

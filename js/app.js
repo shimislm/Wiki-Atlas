@@ -1,5 +1,5 @@
 import {createCommonCountries, createAllSelects} from "./countriesManager.js"
-import {declareEvents} from "./viewEvents.js"
+import {declareEvents} from "./countriesViewEvents.js"
 const init = () =>{
     doApi();
     declareEvents()
