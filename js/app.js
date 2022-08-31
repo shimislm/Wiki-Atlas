@@ -6,8 +6,8 @@ const init = () =>{
 }
 const doApi = async() =>{
     document.querySelector("#id_load").classList.remove("d-none");
-    let url = "https://restcountries.com/v3.1/all";
-    let resp = await fetch(url);
+    let countryUrl = "https://restcountries.com/v3.1/all";
+    let resp = await fetch(countryUrl);
     let data = await resp.json();
     // console.log(data);
     data = data.filter(item => item.name.common != "Palestine")

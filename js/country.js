@@ -1,4 +1,4 @@
-import {createCommonCountries, createSingleCountry, displayBorderName } from "./countriesManager.js";
+import {createCommonCountries, createSingleCountry, displayBorderName ,createWeather} from "./countriesManager.js";
 export default class Country {
     constructor(_parent, _item) {
         this.parent = _parent;
@@ -34,6 +34,7 @@ export default class Country {
     }
     /**create single or result of searched countries */
     render() {
+        createWeather(this.latlng[0] ,this.latlng[1]);
         document.querySelector(this.parent).classList.remove("row-cols-lg-3")
         let myDiv = document.createElement("div");
         myDiv.style = "cursor: default;"
@@ -54,8 +55,7 @@ export default class Country {
         // render the map
         let map = myDiv.querySelector(".map")
         map.className = "country-box p-0 rounded-end-4 text-dark col-md-7 p-0"
-        map.innerHTML = `<iframe width="100%" height="100% frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=${this.latlng[0]},${this.latlng[1]}&hl=en&z=5&amp;output=embed"></iframe>
-        `
+        map.innerHTML = `<iframe width="100%" height="100% frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=${this.latlng[0]},${this.latlng[1]}&hl=en&z=5&amp;output=embed"></iframe> `
         // create back button
         let btn = myDiv.querySelector(".btn")
         btn.addEventListener("click", () => {
@@ -83,5 +83,4 @@ export default class Country {
             })
           }
     }
-
 }

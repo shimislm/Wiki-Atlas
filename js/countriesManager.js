@@ -67,3 +67,9 @@ export const displayBorderName = async (code) =>{
   let {name} = data[0];
   return name.common;
 }
+export const createWeather = async (_lat , _lon)=>{
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${_lat}&lon=${_lon}&mode=json&&units=metric&appid=9df09fe469a8b291355fabf1ce84efd7`
+  let resp = await fetch(weatherUrl);
+  let data = await resp.json();
+  console.log(data)
+}
