@@ -65,7 +65,7 @@ export default class Country {
         // Create all borders one by one
         if (borders_ar!= "No Borders") {
             borders_ar.forEach(async (item, i) => {
-                // Check wither arr is empty
+              // Check wither arr is empty
               if(i >= 0){
                 borders.innerHTML = "Borders:"
               }
