@@ -74,8 +74,14 @@ export const createWeather = async (_lat , _lon)=>{
   console.log(data)
   document.querySelector("#id_weather").classList.remove("d-none")
   document.querySelector("#id_weather").innerHTML=`
-  <h2>Temprature: ${data.main.temp}°c, Max: ${data.main.temp_max}°c, Min: ${data.main.temp_min}°c, Feels like: ${data.main.feels_like}°c </h2>
-  <h4>Wind: ${data.wind.speed}km/h - ${data.weather[0].description.charAt(0).toUpperCase()
-    + data.weather[0].description.slice(1)}</h4>`
+  <h2>Temprature: ${data.main.temp}°c</h2>
+  <div class= "d-flex justify-content-around">
+  <h4>Max Temprature: ${data.main.temp_max}°c 
+  <h4>Min Temprature: ${data.main.temp_min}°c</h4>
+  <h4>Wind: ${data.wind.speed}km/h , ${data.weather[0].description.charAt(0).toUpperCase()
+    + data.weather[0].description.slice(1)}</h4>
+  <h4>Feels like: ${data.main.feels_like}°c</h4>
+  </div>
+  `
   
 }

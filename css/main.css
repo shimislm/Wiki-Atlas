@@ -14,6 +14,7 @@ main .container .loading h2 {
   color: azure;
 }
 main .container section {
+  padding: 8px 0;
   background-image: url("https://j.gifs.com/vQJxxY.gif");
   color: rgb(232, 252, 4);
   background-position: center;
