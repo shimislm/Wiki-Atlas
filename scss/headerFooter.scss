@@ -146,49 +146,6 @@ header{
     }
 
 }
-main{
-    margin-bottom: 100px;
-    min-height: 70vh;
-    .container{
-        padding: 0;
-        .loading{
-            width: 300px;
-            margin: 0 auto;
-            // border-radius: 50%;
-            h2{
-                text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
-                color: azure;
-            }
-        }
-        .country{
-            min-height: 250px;
-            border-radius: 12px;
-            padding: 0;
-            overflow: hidden;
-            .country-box{
-                align-items: center;
-                cursor: pointer;
-                min-height: inherit;
-                .flag{
-                    min-height: 200px;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .borderLink{
-                    span:hover{
-                        color:red;
-                    }
-                }
-
-            }
-            .map{
-                min-height: 100%;
-                box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
-            }
-        }
-    }
-
-}
 footer {
     background: rgba(0, 0, 0, 0.503);
     bottom: 0;
@@ -267,30 +224,6 @@ footer {
             }
 
         }
-        }
-        main{
-            margin-bottom: 100px;
-            min-height: 250px;
-            .container{
-                min-height: inherit;
-                .country{
-                    overflow: hidden;
-                    min-height: 300px;
-                    padding: 8px;
-                    .country-box{
-                        min-height: inherit;
-                        .flag{
-                            min-height: 250px;
-                            background-position: center;
-                            background-size: cover;
-                        }
-                    }
-                    .map{
-                        height: 500px;;
-                    }
-                }
-            }
-        
         }
     footer{
         margin-top: 60px;
