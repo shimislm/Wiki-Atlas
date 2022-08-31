@@ -38,7 +38,8 @@ export const createSingleCountry = input => {
   // search by country code with 3 letters
   ||item.cca3.toLowerCase().includes(input)
   // search by country full name that includes input without spaces
-  || item.name.common.replace(" ","").toLowerCase().includes(input) )
+  || item.name.common.replace(" ","").toLowerCase().includes(input)
+  ||item.name.common.toLowerCase().includes(input) )
   document.querySelector("#id_load").classList.add("d-none");
   // Check if country exists acording to input
   if(ar.length > 0 ){
