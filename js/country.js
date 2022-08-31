@@ -16,6 +16,7 @@ export default class Country {
     }
     /**create first common cuntries*/
     renderCommon() {
+        document.querySelector("#id_weather").classList.add("d-none")
         let parent = document.querySelector(this.parent)
         let myDiv = document.createElement("div");
         myDiv.className = "country justify-content-between h-100 p-0";

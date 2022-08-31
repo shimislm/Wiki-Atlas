@@ -47,6 +47,9 @@ export const createSingleCountry = input => {
       country.render();
     })
   }
+  else if(ar.length > 1){
+    document.querySelector("#id_weather").classList.add("d-none")
+  }
   // returns "Country didnt found massage"
   else{
     document.querySelector("#id_select").value = "";
