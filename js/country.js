@@ -74,7 +74,7 @@ export default class Country {
               const CountryName = await displayBorderName(item)
               let border = document.createElement("a");
               border.className = "singleBorder col-auto p-1"
-              border.style = "cursor: pointer; color:blue";
+              border.style = "cursor: pointer;";
               border.innerHTML = `${CountryName}`;
               borders.append(border);
               border.addEventListener("click", () => {
