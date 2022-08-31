@@ -4,6 +4,7 @@ export default class Country {
         this.parent = _parent;
         this.name = _item.name.common;
         this.borders = _item.borders ? _item.borders : "No Borders";
+        console.log(this.borders)
         let corrency = Object.values(_item.currencies)
         this.currency = `${corrency[0].name} ${corrency[0].symbol}`;
         this.flag = _item.flags.png;
