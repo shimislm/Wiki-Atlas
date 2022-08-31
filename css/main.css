@@ -24,6 +24,9 @@ main .container section {
   border: 4px black solid;
   border-radius: 12px;
 }
+main .container section h4 {
+  font-size: 1em;
+}
 main .container .country {
   min-height: 250px;
   border-radius: 12px;

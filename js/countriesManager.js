@@ -47,9 +47,6 @@ export const createSingleCountry = input => {
       country.render();
     })
   }
-  else if(ar.length > 1){
-    document.querySelector("#id_weather").classList.add("d-none")
-  }
   // returns "Country didnt found massage"
   else{
     document.querySelector("#id_select").value = "";
@@ -74,9 +71,9 @@ export const createWeather = async (_lat , _lon)=>{
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${_lat}&lon=${_lon}&mode=json&&units=metric&appid=9df09fe469a8b291355fabf1ce84efd7`
   let resp = await fetch(weatherUrl);
   let data = await resp.json();
-  console.log(data)
-  document.querySelector("#id_weather").classList.remove("d-none")
-  document.querySelector("#id_weather").innerHTML=`
+  console.log(allCountries_ar.length)
+  document.querySelector(".id_weather").classList.remove("d-none")
+  document.querySelector(".id_weather").innerHTML=`
   <h2>Temprature: ${data.main.temp}°c</h2>
   <div class= "d-flex justify-content-around">
   <h4>Max Temprature: ${data.main.temp_max}°c 
@@ -86,4 +83,5 @@ export const createWeather = async (_lat , _lon)=>{
   <h4>Feels like: ${data.main.feels_like}°c</h4>
   </div>
   `
+  
 }
