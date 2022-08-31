@@ -1,4 +1,4 @@
-import {createCommonCountries, createSingleCountry, displayBorderName ,createWeather} from "./countriesManager.js";
+import {createCommonCountries, createSingleCountry, displayBorderName} from "./countriesManager.js";
 export default class Country {
     constructor(_parent, _item) {
         this.parent = _parent;
@@ -34,7 +34,6 @@ export default class Country {
     }
     /**create single or result of searched countries */
     render() {
-        
         document.querySelector(this.parent).classList.remove("row-cols-lg-3")
         let myDiv = document.createElement("div");
         myDiv.style = "cursor: default;"
@@ -42,9 +41,6 @@ export default class Country {
         // myDiv.style = "cursor: none;"
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML += `<div class="country-box bg-light mx-md-0 text-dark col-md-5 py-2 d-flex flex-column align-items-start" style="cursor: default;">
-        <section id="" class="id_weather border mt-3 mx-0 d-none weather-section text-center ">
-        ${createWeather(this.latlng[0] ,this.latlng[1])}
-        </section>
         <h2 class=" text-center mb-1 rounded-4" >Name: ${this.name}</h2>
         <img class="rounded-4 align-self-center shadow m-2" src="${this.flag}" alt="${this.name}" width="100%">
         <h4>Capital: ${this.capital}</h4>
@@ -62,9 +58,7 @@ export default class Country {
         // create back button
         let btn = myDiv.querySelector(".btn")
         btn.addEventListener("click", () => {
-          // remove weather if country back buttton clicked
-          // document.querySelector("#id_weather").classList.add("d-none")
-          createCommonCountries();
+            createCommonCountries();
         })
         let borders = myDiv.querySelector(".borderLink");
         let borders_ar =  this.borders;
