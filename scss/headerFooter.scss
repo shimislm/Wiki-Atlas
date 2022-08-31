@@ -60,10 +60,9 @@ h6 {
 header{
     background: rgba(0, 0, 0, 0.503);
     font-size: 0.8em;
-    background-image: url("/images/city_skyline.svg"); 
+    background-image: url("https://freesvg.org/img/Panoramic-City-Skyline-Silhouette.png"); 
+    background-position-y: 310px; 
     box-shadow: 0px 10px 13px -7px #000000, 5px 25px 15px 16px rgba(0, 0, 0, 0.12);
-    // background-position: bottom;
-    // background-size: cover;
     nav {
         display: flex;
         align-items: center;
@@ -150,7 +149,9 @@ footer {
     background: rgba(0, 0, 0, 0.503);
     bottom: 0;
     left: 0;
-    background-image: url("/images/city_skyline.svg"); 
+    background-image: url("https://freesvg.org/img/Panoramic-City-Skyline-Silhouette.png"); 
+    // background-size: cover;
+    background-position-y: 310px;
     box-shadow: 0px 10px 13px -7px #000000,0px -5px 19px -2px rgb(0, 0, 0);
     transition: 1000ms;
     position: fixed;
