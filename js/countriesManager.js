@@ -27,7 +27,7 @@ export const createAllSelects=()=>{
 }
 /** create single country UI */
 export const createSingleCountry = input => {
-  input = input.toLowerCase();
+  input = input.toLowerCase().replace(" ","");
   input.replace(" ", "")
   document.querySelector("#id_country").innerHTML=""
   let ar = allCountries_ar.filter(item =>
@@ -37,8 +37,6 @@ export const createSingleCountry = input => {
   ||item.cca2.toLowerCase().includes(input)
   // search by country code with 3 letters
   ||item.cca3.toLowerCase().includes(input)
-  // search by country full name that includes input
-  ||item.name.common.toLowerCase().includes(input)
   // search by country full name that includes input without spaces
   || item.name.common.replace(" ","").toLowerCase().includes(input) )
   document.querySelector("#id_load").classList.add("d-none");
@@ -49,7 +47,6 @@ export const createSingleCountry = input => {
       country.render();
     })
   }
-  
   // returns "Country didnt found massage"
   else{
     document.querySelector("#id_select").value = "";
