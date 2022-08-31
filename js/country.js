@@ -21,11 +21,11 @@ export default class Country {
         myDiv.className = "country justify-content-between h-100 p-0";
         document.querySelector(this.parent).append(myDiv);
         myDiv.innerHTML +=`<div class="country-box bg-light border border-2 mx-md-2  rounded-4 opacity-100 text-dark h-100 p-2">
-        <h2 class=" text-center mb-1 rounded-4" >Name: ${this.name}</h2>
+        <h2 class=" text-center mb-1 rounded-4" >${this.name}</h2>
         <div class="h-75 flag rounded-4 m-2 shadow" style="background-image:url(${this.flag}) ;">
         </div>
         <div class="h-50">
-        <h4>Capital: ${this.capital}</h4></div></div>`
+        <h4 class="text-center">${this.capital}</h4></div></div>`
         let box = myDiv.querySelector(".country-box")
         box.addEventListener("click", () => {
             parent.innerHTML = "";
