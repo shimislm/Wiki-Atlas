@@ -83,5 +83,4 @@ export const createWeather = async (_lat , _lon)=>{
   <h4>Feels like: ${data.main.feels_like}°c</h4>
   </div>
   `
-  
 }
