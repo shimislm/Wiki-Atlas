@@ -20,6 +20,9 @@ main{
             padding: 0;
             overflow: hidden;
             .country-box{
+                h2{
+                    font-family: 'Permanent Marker', cursive;
+                }
                 align-items: center;
                 cursor: pointer;
                 min-height: inherit;
@@ -29,11 +32,6 @@ main{
                     background-position: center;
                     background-size: cover;
                 }
-                // .borderLink{
-                //     padding-left: 12px;
-                //     span:hover{
-                //         color: blue;
-                //     }
                 }
             }
             .country-box:hover{
@@ -41,11 +39,16 @@ main{
                 transform: scale(1.05);
             }
             .no-hover{
+
                 align-items: center;
                 min-height: inherit;
                 transition: 1000ms;
                 box-shadow:none;
                 transform: scale(1);
+                h2{
+                    align-self: center;
+                    font-family: 'Permanent Marker', cursive;
+                }
                 .borderLink{
                     padding-left: 12px;
                     span:hover{
@@ -79,12 +82,6 @@ main{
                         background-position: center;
                         background-size: cover;
                     }
-                    // .borderLink{
-                    //     padding-left: 12px;
-                    //     span:hover{
-                    //         color: blue;
-                    //     }
-                    // }
                 }
                 .map{
                     height: 500px;;

@@ -26,6 +26,9 @@ main .country .country-box {
   min-height: inherit;
   transition: 1000ms;
 }
+main .country .country-box h2 {
+  font-family: "Permanent Marker", cursive;
+}
 main .country .country-box .flag {
   min-height: 200px;
   background-position: center;
@@ -41,6 +44,10 @@ main .no-hover {
   transition: 1000ms;
   box-shadow: none;
   transform: scale(1);
+}
+main .no-hover h2 {
+  align-self: center;
+  font-family: "Permanent Marker", cursive;
 }
 main .no-hover .borderLink {
   padding-left: 12px;
