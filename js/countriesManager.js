@@ -28,20 +28,24 @@ export const createAllSelects=()=>{
 }
 /** create single country UI */
 export const createSingleCountry = input => {
-  input = input.toLowerCase().replace(" ","");
-  input.replace(" ", "")
-  document.querySelector("#id_country").innerHTML=""
-  let ar = allCountries_ar.filter(item =>
-    // search by country official name 
-  item.name.official.toLowerCase().includes(input) 
-  // search by country code with 2 letters 
-  ||item.cca2.toLowerCase().includes(input)
-  // search by country code with 3 letters
-  ||item.cca3.toLowerCase().includes(input)
-  // search by country full name that includes input without spaces
-  || item.name.common.replace(" ","").toLowerCase().includes(input)
-  ||item.name.common.toLowerCase().includes(input) )
-  document.querySelector("#id_load").classList.add("d-none");
+  if(input === ""){
+    alert("You must type at least one char to perform a search ")
+  }
+  else{
+    input = input.toLowerCase().replace(" ","");
+    input.replace(" ", "")
+    document.querySelector("#id_country").innerHTML=""
+    let ar = allCountries_ar.filter(item =>
+      // search by country official name 
+    item.name.official.toLowerCase().includes(input) 
+    // search by country code with 2 letters 
+    ||item.cca2.toLowerCase().includes(input)
+    // search by country code with 3 letters
+    ||item.cca3.toLowerCase().includes(input)
+    // search by country full name that includes input without spaces
+    || item.name.common.replace(" ","").toLowerCase().includes(input)
+    ||item.name.common.toLowerCase().includes(input) )
+    document.querySelector("#id_load").classList.add("d-none"); 
   // Check if country exists acording to input
   if(ar.length > 0 ){
     ar.forEach(item => {
@@ -60,6 +64,8 @@ export const createSingleCountry = input => {
       createCommonCountries();
   }, 2000);
   }
+  }
+
 } 
 /**Get country code and return full country name */
 export const displayBorderName = async (code) =>{
