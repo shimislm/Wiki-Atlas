@@ -14,7 +14,7 @@ export const declareEvents = () => {
         createSingleCountry(select.value)
     })
     window.onhashchange = function() {
-        createCommonCountries()
+        history.back;
        }
     search.addEventListener("keypress",(e)=>{
         if(e.key === "Enter"){

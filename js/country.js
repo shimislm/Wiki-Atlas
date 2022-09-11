@@ -1,6 +1,6 @@
-import {createCommonCountries, createSingleCountry, displayBorderName} from "./countriesManager.js";
+// import {createCommonCountries, createSingleCountry, displayBorderName} from "./countriesManager.js";
 export default class Country {
-    constructor(_parent, _item) {
+    constructor(_parent, _item, createCommonCountries, createSingleCountry, displayBorderName) {
         this.parent = _parent;
         this.name = _item.name.common;
         this.borders = _item.borders ? _item.borders : "No Borders";
@@ -13,6 +13,9 @@ export default class Country {
         this.languages = languages;
         this.region = _item.region;
         this.latlng = _item.latlng;
+        this.createCommonCountries = createCommonCountries;
+        this.createSingleCountry = createSingleCountry;
+        this.displayBorderName= displayBorderName;
     }
     /**create first common cuntries*/
     renderCommon() {
@@ -58,7 +61,7 @@ export default class Country {
         // create back button
         let btn = myDiv.querySelector(".btn")
         btn.addEventListener("click", () => {
-            createCommonCountries();
+            this.createCommonCountries();
         })
         let borders = myDiv.querySelector(".borderLink");
         let borders_ar =  this.borders;
@@ -70,14 +73,15 @@ export default class Country {
                 borders.innerHTML = "Borders:"
               }
               // Wait for for all border to be loaded
-              const CountryName = await displayBorderName(item)
+              const CountryName = await this.displayBorderName(item)
+
               let border = document.createElement("span");
               border.className = "singleBorder col-auto p-1"
               border.style = "cursor: pointer;";
               border.innerHTML = `${CountryName}`;
               borders.append(border);
               border.addEventListener("click", () => {
-                createSingleCountry(CountryName)
+                this.createSingleCountry(CountryName)
               })
             })
           }

@@ -11,7 +11,7 @@ export const createCommonCountries = (_ar = allCountries_ar) => {
   // console.log(startPage_ar)
   document.querySelector("#id_load").classList.add("d-none");
   startPage_ar.forEach(item => {
-        let country = new Country("#id_country",item);
+        let country = new Country("#id_country",item, createCommonCountries, createSingleCountry, displayBorderName);
         country.renderCommon();
       })
 }
@@ -32,24 +32,24 @@ export const createSingleCountry = input => {
     alert("You must type at least one char to perform a search ")
   }
   else{
-    input = input.toLowerCase().replace(" ","");
-    input.replace(" ", "")
+    input = input.toLowerCase().replaceAll(" ","");
+    console.log(input)
     document.querySelector("#id_country").innerHTML=""
     let ar = allCountries_ar.filter(item =>
       // search by country official name 
-    item.name.official.toLowerCase().includes(input) 
+    item.name.official.toLowerCase().replaceAll(" ", "").includes(input) 
     // search by country code with 2 letters 
     ||item.cca2.toLowerCase().includes(input)
     // search by country code with 3 letters
     ||item.cca3.toLowerCase().includes(input)
     // search by country full name that includes input without spaces
-    || item.name.common.replace(" ","").toLowerCase().includes(input)
+    || item.name.common.replaceAll(" ","").toLowerCase().includes(input)
     ||item.name.common.toLowerCase().includes(input) )
     document.querySelector("#id_load").classList.add("d-none"); 
   // Check if country exists acording to input
   if(ar.length > 0 ){
     ar.forEach(item => {
-      let country = new Country("#id_country",item);
+      let country = new Country("#id_country",item,createCommonCountries, createSingleCountry, displayBorderName);
       country.render();
     })
   }
@@ -69,9 +69,17 @@ export const createSingleCountry = input => {
 } 
 /**Get country code and return full country name */
 export const displayBorderName = async (code) =>{
+  
+  if (code=== "USA"){
+    
+  }
   let url = `https://restcountries.com/v3.1/alpha/${code.toLowerCase()}`;
   let resp = await fetch(url);
   let data = await resp.json();
   let {name} = data[0];
+
+  if(name.common == "United States"){
+    return "United States of America"
+  }
   return name.common;
 }
