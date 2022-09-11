@@ -1,4 +1,4 @@
-// import {createCommonCountries, createSingleCountry, displayBorderName} from "./countriesManager.js";
+
 export default class Country {
     constructor(_parent, _item, createCommonCountries, createSingleCountry, displayBorderName) {
         this.parent = _parent;
@@ -52,7 +52,7 @@ export default class Country {
         <h6>Languages: ${this.languages}</h6>
         <h6>Currency: ${this.currency} </h6>
         <h6>Region: ${this.region} </h6>
-        <button class="btn btn-primary mt-2 text-end">Back</button></div>
+        <button class="btn btn-primary mt-2 text-end">Back <i class="fa fa-home" aria-hidden="true"></i></button></div>
         <div class="map border border-white border-2 col-md-6 my-md-2 my-3 rounded-4 p-0 overflow-hidden"></div>`
         // render the map
         let map = myDiv.querySelector(".map")
