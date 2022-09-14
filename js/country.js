@@ -69,20 +69,24 @@ export default class Country {
         if (borders_ar!= "No Borders") {
             borders_ar.forEach(async (item, i) => {
               // Check wither arr is empty
-              if(i >= 0){
+              if( i >= 0 ){
                 borders.innerHTML = "Borders:"
               }
+              let border,CountryName;
               // Wait for for all border to be loaded
-              const CountryName = await this.displayBorderName(item)
+              if(item != "PSE"){
+                CountryName = await this.displayBorderName(item)
+                border = document.createElement("span");
+                border.className = "singleBorder col-auto p-1"
+                border.style = "cursor: pointer;";
+                border.innerHTML = `${CountryName}`;
+                borders.append(border);
+              
+                border.addEventListener("click", () => {
+                  this.createSingleCountry(CountryName)
+                })
+              }
 
-              let border = document.createElement("span");
-              border.className = "singleBorder col-auto p-1"
-              border.style = "cursor: pointer;";
-              border.innerHTML = `${CountryName}`;
-              borders.append(border);
-              border.addEventListener("click", () => {
-                this.createSingleCountry(CountryName)
-              })
             })
           }
     }
