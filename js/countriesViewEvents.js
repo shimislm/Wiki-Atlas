@@ -24,12 +24,18 @@ export const declareEvents = () => {
     })
     search_btn.addEventListener("click",()=>{
         select.value="";
-        createSingleCountry(search.value);
+        if(search.value.length <2){
+            alert("Please insert minimm 2 letters")
+        }
+        else{
+            createSingleCountry(search.value);
+        }
+        
     })
     usa_li.addEventListener("click",()=>{
         search.value="";
         select.value="";
-        createSingleCountry("USA");
+        createSingleCountry("united states of america");
     })
     israel_li.addEventListener("click",()=>{
         search.value="";
