@@ -70,9 +70,6 @@ export const createSingleCountry = input => {
 /**Get country code and return full country name */
 export const displayBorderName = async (code) =>{
   
-  if (code=== "USA"){
-    
-  }
   let url = `https://restcountries.com/v3.1/alpha/${code.toLowerCase()}`;
   let resp = await fetch(url);
   let data = await resp.json();
